@@ -1,8 +1,7 @@
 ## ESP32 A2DP Source controller via I2C
-This project uses an ESP32 as a Bluetooth A2DP source to play audio on a Bluetooth earphone/speaker. 
-A master MCU (e.g. Coral) sends commands to the ESP32 via the I2C bus. The ESP32 then plays audio on an earphone/speaker via A2DP.
+This project uses an ESP32 as a Bluetooth A2DP source to play audio on a Bluetooth earphone/speaker. A master MCU (e.g., Coral) sends commands to the ESP32 via the I2C bus. The ESP32 then plays audio on an earphone/speaker via A2DP.
 
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/LICENSE)
 
 <a href="https://www.buymeacoffee.com/teamprof" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 28px !important;width: 108px !important;" ></a>
 
@@ -18,9 +17,21 @@ The following components are required for this project:
 
 ---
 ### System Block diagram
-## *** System Block diagram will be available in E/Nov ***
 ```
+      A.I. device			                      wearable device
+    
+    +--------+                           +--------------------+
+    | camera |			                     |   swimmming cap    | (the cap prevent lost of earphone during swimming)
+    +--------+ +-------+    Bluetooth    +--------------------+
+    | coral  |-| ESP32 |		  (A2DP)     | Bluetooth earphone |
+    +--------+ +-------+                 | (bone conduction)  |
+                                         +--------------------+
+
 ```
+The firmware of this project runs on the ESP32 in the A.I. device portion above.
+
+For more information, pleasae refer to https://www.hackster.io/contests/buildtogether/hardware_applications/15719
+
 
 ### System image 
 ## *** System image will be available in E/Nov ***
@@ -44,6 +55,41 @@ The following components are required for this project:
 |  21  |   I2C SDA    |
 +------+--------------+
 ```
+
+## Sound output
+Sound will be played based on the following situations.
+```
+	+--------------------------------------+---------------------+
+	| Situation			                       |    sound file       |
+	+--------------------------------------+---------------------+
+	| swimmer nears the edge of the pool   | soundEdgePool.mp3   |
+ 	|                                      |                     |
+	| swimmer nears left lane	             | soundLeftLane.mp3   |
+	| swimmer at the middle of lane	       | soundMiddleLane.mp3 |
+	| swimmer nears right lane	           | soundRightLane.mp3  |
+	|                                      |                     |
+	| error				                         |     error.mp3       |
+	+--------------------------------------+---------------------+
+```
+note:
+* sound chips is contributed by Pixabay (https://pixabay.com/)
+* sound is cropped to 0.1 seconds
+
+
+Example of sound output:
+```
+when the swimmer is near the edge of the pool and at the middle of lane, soundEdgePool and soundMiddleLane will be heared by the swimmer, as below
+       0.1s           0.1s            0.1s            0.1s            0.1s
+|---------------|---------------|---------------|---------------|---------------|
+                  soundEdgePool                                  soundMiddleLane
+
+when the swimmer is near the edge of the pool and nears left/right lane, soundEdgePool and soundLeftLane/soundRightLane will be heared by the swimmer, as below
+       0.1s           0.1s            0.1s            0.1s            0.1s
+|---------------|---------------|---------------|---------------|---------------|
+                  soundEdgePool                                  soundLeftLane /
+                                                                 soundRightLane 
+```
+
 
 ## Code explanation
 ## *** source code will be available in E/Nov ***
@@ -104,7 +150,7 @@ If you want to contribute to this project:
 ---
 
 ### License
-- The project is licensed under GNU LESSER GENERAL PUBLIC LICENSE Version 3
+- The project is licensed under GNU GENERAL PUBLIC LICENSE Version 3
 ---
 
 ### Copyright
