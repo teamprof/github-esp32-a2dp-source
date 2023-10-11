@@ -9,21 +9,21 @@ This project uses an ESP32 as a Bluetooth A2DP source to play audio on a Bluetoo
 ## Hardware
 The following components are required for this project:
 1. ESP32 Dev Kit V1 
-2. 
-3. 
-4. [optional]
+2. Bluetooth earphone/speaker
+3. Coral Dev Board Micro
+4. [optional] [![coral-esp32-adapter](/doc/image/pcb.jpg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/doc/image/pcb.jpg)
 5. Computer 
 ## *** Hardware information will be available in E/Nov ***
 
 ---
 ### System Block diagram
 ```
-      A.I. device			                      wearable device
+    A.I. device                             wearable device
     
     +--------+                           +--------------------+
-    | camera |			                     |   swimmming cap    | (the cap prevent lost of earphone during swimming)
+    | camera |                           |   swimmming cap    | (the cap prevent lost of earphone during swimming)
     +--------+ +-------+    Bluetooth    +--------------------+
-    | coral  |-| ESP32 |		  (A2DP)     | Bluetooth earphone |
+    | coral  |-| ESP32 |     (A2DP)      | Bluetooth earphone |
     +--------+ +-------+                 | (bone conduction)  |
                                          +--------------------+
 
@@ -60,15 +60,15 @@ For more information, pleasae refer to https://www.hackster.io/contests/buildtog
 Sound will be played based on the following situations.
 ```
 	+--------------------------------------+---------------------+
-	| Situation			                       |    sound file       |
+	| Situation	                         |    sound file       |
 	+--------------------------------------+---------------------+
 	| swimmer nears the edge of the pool   | soundEdgePool.mp3   |
  	|                                      |                     |
-	| swimmer nears left lane	             | soundLeftLane.mp3   |
-	| swimmer at the middle of lane	       | soundMiddleLane.mp3 |
+	| swimmer nears left lane	           | soundLeftLane.mp3   |
+	| swimmer at the middle of lane        | soundMiddleLane.mp3 |
 	| swimmer nears right lane	           | soundRightLane.mp3  |
 	|                                      |                     |
-	| error				                         |     error.mp3       |
+	| error                                |     error.mp3       |
 	+--------------------------------------+---------------------+
 ```
 note:
