@@ -3,7 +3,7 @@ This project uses an ESP32 as a Bluetooth A2DP source to play audio on a Bluetoo
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/LICENSE)
 
-<a href="https://www.buymeacoffee.com/teamprof" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 28px !important;width: 108px !important;" ></a>
+<a href="https://www.buymeacoffee.com/teamprof" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 38px !important;width: 128px !important;" ></a>
 
 ---
 ## Hardware
@@ -45,17 +45,6 @@ For more information, pleasae refer to https://www.hackster.io/contests/buildtog
 4. Download and extract this esp32-a2dp-source code from github 
 ---
 
-## pin assignment
-```
-+---------------------+
-|       ESP32         |
-+------+--------------+
-| GPIO |  description |
-+------+--------------+
-|  22  |   I2C SCL    |
-|  21  |   I2C SDA    |
-+------+--------------+
-```
 
 ## Sound output
 Sound will be played based on the following situations.
@@ -90,6 +79,23 @@ when the swimmer is near the edge of the pool and nears left/right lane, soundEd
                   soundEdgePool                                  soundLeftLane /
                                                                  soundRightLane 
 ```
+
+
+## pin assignment
+```
++------------------------+     +---------------------+
+| Coral Dev Board Micro  |     |       ESP32         |
++-------+----------------+     +------+--------------+
+| GPIO  |   description  |     | GPIO |  description |
++-------+----------------+     +------+--------------+
+| kSCL1 |   I2C1 SCL     |     |  22  |   I2C SCL    |
+| kSDA1 |   I2C1 SDA     |     |  21  |   I2C SDA    |
++-------+----------------+     +------+--------------+
+```
+
+## I2C communication format
+## *** to be available ***
+
 
 
 ## Code explanation
