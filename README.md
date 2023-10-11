@@ -13,7 +13,7 @@ The following components are required for this project:
 3. Coral Dev Board Micro
 4. (optional) coral-esp32-adapter
 [![coral-esp32-adapter](/doc/image/pcb.jpg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/doc/image/pcb.jpg)
-5. Computer 
+5. Computer with 2 USB ports
 ## *** Hardware information will be available in E/Nov ***
 
 ---
@@ -60,17 +60,17 @@ For more information, pleasae refer to https://www.hackster.io/contests/buildtog
 ## Sound output
 Sound will be played based on the following situations.
 ```
-	+--------------------------------------+---------------------+
-	| Situation	                         |    sound file       |
-	+--------------------------------------+---------------------+
-	| swimmer nears the edge of the pool   | soundEdgePool.mp3   |
- 	|                                      |                     |
-       | swimmer nears left lane              | soundLeftLane.mp3   |
-	| swimmer at the middle of lane        | soundMiddleLane.mp3 |
-       | swimmer nears right lane             | soundRightLane.mp3  |
-	|                                      |                     |
-	| error                                |     error.mp3       |
-	+--------------------------------------+---------------------+
+   +--------------------------------------+---------------------+
+   | Situation                            |    sound file       |
+   +--------------------------------------+---------------------+
+   | swimmer nears the edge of the pool   | soundEdgePool.mp3   |
+   |                                      |                     |
+   | swimmer nears left lane              | soundLeftLane.mp3   |
+   | swimmer at the middle of lane        | soundMiddleLane.mp3 |
+   | swimmer nears right lane             | soundRightLane.mp3  |
+   |                                      |                     |
+   | error                                |     error.mp3       |
+   +--------------------------------------+---------------------+
 ```
 note:
 * sound chips is contributed by Pixabay (https://pixabay.com/)
