@@ -164,6 +164,7 @@ Here's an example of a I2C slave address as "0x55".
 #define I2C_DEV_ADDR ((uint8_t)0x55)
 ```
 
+### Please refer to "esp32-a2dp-source.ino" for complete code
 ## *** source code will be available in E/Nov ***
 
 ---
