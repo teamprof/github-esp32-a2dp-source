@@ -12,7 +12,7 @@ The following components are required for this project:
 2. Bluetooth earphone/speaker
 3. Coral Dev Board Micro
 4. (optional) coral-esp32-adapter
-[![coral-esp32-adapter](/doc/image/pcb.jpg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/doc/image/pcb.jpg)
+[![coral-esp32-adapter](/doc/image/pcba.jpg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/doc/image/pcba.jpg)
 5. Computer with 2 USB ports
 ## *** Hardware information will be available in E/Nov ***
 
