@@ -1,5 +1,5 @@
 ## ESP32 A2DP Source controller via I2C
-This project uses an ESP32 as a Bluetooth A2DP source to play audio on a Bluetooth earphone/speaker. A master MCU (e.g., Coral Dev Board Micro) sends commands to the ESP32 via the I2C bus. The ESP32 then plays audio on an earphone/speaker via A2DP.
+This project uses an ESP32 as a Bluetooth A2DP source to play audio on a Bluetooth earphone/speaker. A master MCU (e.g., [Coral Dev Board Micro](https://coral.ai/docs/dev-board-micro/get-started/)) sends commands to the ESP32 via the I2C bus. The ESP32 then plays audio on an earphone/speaker via A2DP.
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL_v3-blue.svg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/LICENSE)
 
@@ -10,11 +10,10 @@ This project uses an ESP32 as a Bluetooth A2DP source to play audio on a Bluetoo
 The following components are required for this project:
 1. ESP32 Dev Kit V1 
 2. Bluetooth earphone/speaker
-3. Coral Dev Board Micro
+3. [Coral Dev Board Micro](https://coral.ai/docs/dev-board-micro/get-started/)
 4. (optional) coral-esp32-adapter
 [![coral-esp32-adapter](/doc/image/pcba.jpg)](https://github.com/teamprof/esp32-a2dp-source/blob/main/doc/image/pcba.jpg)
 5. Computer with 2 USB ports
-## *** Hardware information will be available in E/Nov ***
 
 ---
 ### System Block diagram
@@ -31,18 +30,18 @@ The following components are required for this project:
 ```
 The firmware of this project runs on the ESP32 in the A.I. device portion above.
 
-For more information, pleasae refer to https://www.hackster.io/contests/buildtogether/hardware_applications/15719
+For more information, pleasae refer to https://github.com/teamprof/github-freertos-coral-swimmer
 
 
 ### System image 
-## *** System image will be available in E/Nov ***
+Please refer to https://github.com/teamprof/github-freertos-coral-swimmer about the system image 
 
 ---
 ## Software setup
 1. Install [Arduino IDE 2.0+ for Arduino](https://www.arduino.cc/en/Main/Software)
 2. Install [A Simple Arduino Bluetooth Music Receiver and Sender for the ESP32](https://github.com/pschatzmann/ESP32-A2DP)
 3. Install [Arduino DebugLog lib](https://www.arduino.cc/reference/en/libraries/debuglog/)
-4. Download and extract this esp32-a2dp-source code from github 
+4. Clone this github-esp32-a2dp-source code by "git clone https://github.com/teamprof/github-esp32-a2dp-source"
 ---
 
 
@@ -71,13 +70,13 @@ Example of sound output:
 when the swimmer is near the edge of the pool and at the middle of lane, soundEdgePool and soundMiddleLane will be heared by the swimmer, as below
        0.1s           0.1s            0.1s            0.1s            0.1s
 |---------------|---------------|---------------|---------------|---------------|
-                  soundEdgePool                                  soundMiddleLane
+                  soundEdgePool  soundMiddleLane                  
 
 when the swimmer is near the edge of the pool and nears left/right lane, soundEdgePool and soundLeftLane/soundRightLane will be heared by the swimmer, as below
        0.1s           0.1s            0.1s            0.1s            0.1s
 |---------------|---------------|---------------|---------------|---------------|
-                  soundEdgePool                                  soundLeftLane /
-                                                                 soundRightLane 
+                  soundEdgePool   soundLeftLane
+                                  soundRightLane 
 ```
 
 
@@ -165,22 +164,21 @@ Here's an example of a I2C slave address as "0x55".
 ```
 
 ### Please refer to "esp32-a2dp-source.ino" for complete code
-## *** source code will be available in E/Nov ***
 
 ---
 
 ## Demo
-## *** Video demo will be available in E/Nov ***
+Please refer to https://github.com/teamprof/github-freertos-coral-swimmer about the video demo 
 
 
 ---
 ### Debug
-Enable or disable log be modifying macro on "AppLog.h"
+Enable or disable log be modifying macro on "LibLog.h"
 
 Debug is disabled by "#define DEBUGLOG_DISABLE_LOG"
 Enable trace debug by "#define DEBUGLOG_DEFAULT_LOG_LEVEL_TRACE"
 
-Example of AppLog.h
+Example of src/LibLog.h
 ```
 // Disable Logging Macro (Release Mode)
 // #define DEBUGLOG_DISABLE_LOG
